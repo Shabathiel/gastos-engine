@@ -1,0 +1,4 @@
+package datos
+
+interface GastosRepository {
+}
