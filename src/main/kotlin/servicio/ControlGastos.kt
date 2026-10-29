@@ -11,7 +11,7 @@ class ControlGastos(private val controlador: GastosInterface) {
             throw IllegalArgumentException("Los campos no deben estar en blanco")
         if (monto < 1)
             throw IllegalArgumentException("El monto deber ser positivo")
-        if (fecha.matches(Regex("""\d{4}-\d{2}-\d{2}""")))
+        if (!fecha.matches(Regex("""\d{4}-\d{2}-\d{2}""")))
             throw IllegalArgumentException("La fecha no coincide con el formato requerido")
 
         return controlador.agregar(Transaccion(0,descripcion,monto,controlador.obtenerCategoria(categoria),fecha))

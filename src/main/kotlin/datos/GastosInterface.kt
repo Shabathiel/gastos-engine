@@ -11,5 +11,5 @@ interface GastosInterface {
 
     suspend fun eliminarPorId(id: Int): Boolean
 
-    fun obtenerCategoria(nombre: String): Int
+    suspend fun obtenerCategoria(nombre: String): Int
 }
