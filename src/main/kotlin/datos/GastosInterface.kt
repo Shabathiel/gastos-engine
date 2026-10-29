@@ -2,12 +2,14 @@ package datos
 
 import modelo.Transaccion
 
-interface GastosRepository {
+interface GastosInterface {
     suspend fun agregar(gasto: Transaccion) : Int
 
     suspend fun listar(): List<Transaccion>
 
     suspend fun buscarPorId(id: Int): Transaccion?
 
-    suspend fun eliminarPorIDD(id: Int): Boolean
+    suspend fun eliminarPorId(id: Int): Boolean
+
+    fun obtenerCategoria(nombre: String): Int
 }
